@@ -67,14 +67,4 @@ function td_bpxps_xprofile_shortcode($attributes) {
 	return xprofile_get_field_data($field, $user_id);
 }
 
-?><?php //BEGIN::SELF_HOSTED_PLUGIN_MOD
-					
-	/**********************************************
-	* The following was added by Self Hosted Plugin
-	* to enable automatic updates
-	* See http://wordpress.org/extend/plugins/self-hosted-plugins
-	**********************************************/
-	require "__plugin-updates/plugin-update-checker.class.php";
-	$__UpdateChecker = new PluginUpdateChecker('http://tylerdigital.com/extend/plugins/bp-xprofile-shortcode/update', __FILE__,'bp-xprofile-shortcode');			
-	
-//END::SELF_HOSTED_PLUGIN_MOD ?>
+?>
