@@ -10,6 +10,9 @@ Adds Shortcode for BuddyPress XProfile data
 == Description ==
 Adds Shortcode for BuddyPress XProfile data
 
+Please see a list of shortcodes available here:
+http://tylerdigital.com/products/bp-xprofile-shortcode-wordpress-plugin/
+
 == Changelog ==
 = v1.0.1 =
 * Fix fatal error from deprecated function in WP 3.6.0
