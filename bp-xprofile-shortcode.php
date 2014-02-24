@@ -3,7 +3,7 @@
 Plugin Name: BP XProfile Shortcode
 Plugin URI: http://tylerdigital.com/labs/bp-xprofile-shortcode
 Description: Adds Shortcode for BuddyPress XProfile data
-Version: 1.0
+Version: 1.0.1
 Author: Tyler Digital
 Author URI: http://tylerdigital.com/
 */
