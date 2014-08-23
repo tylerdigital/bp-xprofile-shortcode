@@ -32,6 +32,8 @@ Output city for the author of the current page/post being viewed:
 Output city for the currently displayed BuddyPress profile:
 [xprofile field="City" user=displayed]
 
+[Learn more about BP XProfile Shortcode](http://tylerdigital.com/products/bp-xprofile-shortcode-plugin/)
+
 
 
 == Changelog ==
