@@ -40,31 +40,39 @@ function td_bpxps_xprofile_shortcode($attributes) {
 	extract($attributes);
 	$user_id = (isset($user)) ? $user : false;
 	global $bp;
+	global $post;
 
-	if (!empty($user_id) && intval($user_id)===0) {
-		// shortcode-defined username
-		$user_id = get_user_by( 'slug', $user_id);
+	if (isset($user) && !in_array($user, array('displayed', 'author', 'current')) ) {
+		// hardcoded username/id
+		$user_object = get_user_by( 'slug', $user);
+		if ( empty( $user_object->ID ) ) {
+			$user_object = get_user_by( 'id', $user );
+		}
+		if ( empty( $user_object->ID ) ) {
+			$user_object = get_user_by( 'login', $user );
+		}
 	}
+	if ( !empty( $user_object->ID ) ) {
+		return xprofile_get_field_data($field, $user_object->ID, 'comma');
+	}
+
 	if ((isset($user) && $user=='displayed') ||
-		(empty($user_id) && isset($bp->displayed_user->id))) { 
+		(!isset($user) && isset($bp->displayed_user->id))) { 
 		// On profile page, show the displayed user's information
 		$user_id = $bp->displayed_user->id;
-	}
-
-	global $post;
-	if ((isset($user) && $user=='author') ||
-		(empty($user_id) && !empty($post->post_author))) {
+	} elseif ((isset($user) && $user=='author') ||
+		(!isset($user) && !empty($post->post_author))) {
 		// On author or single post page, show the author's information
 		$user_id = $post->post_author;
-	}
-	if ((isset($user) && $user=='current') ||
-		(empty($user_id) && is_user_logged_in())) {
+	} elseif ((isset($user) && $user=='current') ||
+		(!isset($user) && is_user_logged_in())) {
 		// Show the currently logged in user's information
 		$user_id = get_current_user_id();
 	}
+
 	if (empty($user_id)) return false;
 
-	return xprofile_get_field_data($field, $user_id);
+	return xprofile_get_field_data($field, $user_id, 'comma');
 }
 
 ?>
