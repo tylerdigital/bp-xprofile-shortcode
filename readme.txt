@@ -2,7 +2,7 @@
 Contributors: tylerdigital, croixhaug
 Tags: buddypress, xprofile, shortcode, users, user meta
 Requires at least: 3.5
-Tested up to: 3.9.2
+Tested up to: 4.2
 Stable tag: 1.0.1
 
 Adds Shortcode for BuddyPress XProfile data
