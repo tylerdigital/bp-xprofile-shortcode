@@ -34,12 +34,12 @@ Output city for the currently displayed BuddyPress profile:
 
 [Learn more about BP XProfile Shortcode](http://tylerdigital.com/products/bp-xprofile-shortcode-plugin/)
 
-
-
-== Changelog ==
-= v1.0.1 =
-* Fix fatal error from deprecated function in WP 3.6.0
-
 == Installation ==
+
 Install and activate, there are no settings in the UI
 Documentation of shortcode available at http://tylerdigital.com/products/bp-xprofile-shortcode-plugin/
+
+== Changelog ==
+
+= 1.0.1 =
+* Fixed: fatal error from deprecated function in WP 3.6.0
